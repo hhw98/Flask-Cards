@@ -32,7 +32,7 @@ def logIn(username: str, password: str) -> bool:
     session['userid'] = result[0]
     return(True)
 
-def displayMySets(userid:int) -> bool:
+def getSets(userid:int) -> dictionary:
     """Take the userid, display all sets in his account
 
     If successfully read the sets, return true, else return false
@@ -40,33 +40,30 @@ def displayMySets(userid:int) -> bool:
     """
     pass
 
-
-
-def displayOneSet(userid:int, setid:int) -> bool
+def getCards(userid:int, setid:int):
     """Get all cards with a specific userid in a set
-        
+
     Get all cards in the set and filter the ones with the userid
     """
     pass
 
 def addCard(cardFront = '':str, cardBack = '':str, setid:int) -> bool
     """Add a new card  to the table
-    
+
     Take the information on a card's front and back side, insert it to Cards table and assign a set to it
     If successfully added it, return true, else return false
     """
     pass
 
-def editCard(cardid:int, cardFront:str, cardBack:str, setid:int) -> bool
+def editCard(cardid:int, cardFront:str, cardBack:str) -> bool
     """Edit a card's information
-    
+
     Edit a card's information, include the context on frontside, backside and the setid
     If successfully edited it, return true, else return false
     """
     pass
 
-
-def deleteCard(cardid:str) -> bool
+def deleteCard(cardid:id) -> bool
     """Delete a card from Cards table
 
     If successfully deleted it, return true, else return false
@@ -82,13 +79,55 @@ def indicateCard(cardid:int, answer:int = 0) -> bool
     """
     pass
 
-def resetSets() -> bool
+def addCategory(categoryName:str) -> bool
+    """Add a new category
+
+    Take the category's name and userid session variable, add it to the Category table
+    If successfully added it to the table, return true, else return false
+    """
+    pass
+
+def addSet(setName:str, categoryid:int) -> bool
+    """Add a new set
+
+    Take the set's name , categoryid and userid session variable, add it to the Sets table
+    If didn't 
+    If successfully added it to the table, return true, else return false
+    """
+    pass
+
+def modifySet(setig:int, newName:str) -> bool
+    """Modify a set
+
+    Change the set's name
+    If successfully changed the name, return true, else return false
+    """
+    pass
+
+def modifyCategory(categoryid:int, newName:str) -> bool
+    """Modify a category
+
+    Change the category's name
+    If successfully changed the name, return true, else return false
+    """
+    pass
+
+def deleteSets(setid:int) -> bool
     """Delete all information in a set
-    
-    Delete everything in a set, include id, name, categoryid, userid and create date
+
+    Delete everything in a set, include idname, categoryid, userid and create date
     If successfully reset the set, return true, else return false
     """
     pass
+
+def deleteCategory(categoryid: int) -> bool
+    """Delete a category
+
+    Delete everything in a category, includ id, userid, name
+    If successfully reset the set, return true, else return falsee
+    """
+    pass
+
 def signiOut() -> bool
     """Sign out the user
 
